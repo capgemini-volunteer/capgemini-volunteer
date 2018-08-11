@@ -30,8 +30,13 @@ export class HeaderContent extends React.Component {
           </div>
 
           <form onSubmit={this.handleSubmit}>
-            <button className="get-started" type="submit">
-              <p>Get Started</p>
+            <button className="case-worker" type="submit">
+              <p>Employee Sign Up</p>
+            </button>
+            <br/>
+            <br/>
+            <button className="employee" type="submit">
+              <p>Case Worker Sign Up</p>
             </button>
           </form>
         </div>
