@@ -176,10 +176,8 @@
           border: none;
           width: 133px;
           background: #f75a9f;
-          margin-left: -8%;
           padding-top: 17px;
-          border-bottom-right-radius: 45px;
-          border-top-right-radius: 45px;
+          border-radius: 45px;
           -webkit-box-shadow: 0 8px 15px #a2549c66;
           box-shadow: 0 8px 15px #a2549c66;
           cursor: pointer;
@@ -296,22 +294,3 @@
   
   .section-title {
     font-family: "Josefin Sans", sans-serif; }
-  
-  .service {
-    height: 400px;
-    margin-bottom: 20px;
-    padding: 25px; }
-    .service img {
-      width: 130px;
-      padding-top: 27px;
-      padding: 24px;
-      padding-bottom: 24px;
-      padding-bottom: 27px; }
-  
-  .copyright {
-    background: #eee;
-    text-align: center;
-    font-size: 2em;
-    padding: 20px;
-    font-family: "Josefin Sans", sans-serif; }
-  

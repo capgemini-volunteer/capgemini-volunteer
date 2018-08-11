@@ -21,17 +21,6 @@ export class HeaderContent extends React.Component {
   render() {
     return (
       <Fragment>
-        <div className="img-wrapper">
-          {/* <img className="globe-img" src={globe} alt="globe" />
-          <img className="particle-img" src={particle} alt="logo" />
-          <img className="moon-img" src={moon} alt="moon" /> */}
-        </div>
-        <span className="header-circle">
-        </span>
-        <span className="header-circle">
-        </span>
-        <span className="header-circle">
-        </span>
         <div className="col-xs-9 col-sm-12 col-md-12 col-lg-10  header-container">
           <div className="large">
             <p>Join the movement</p>
@@ -41,7 +30,7 @@ export class HeaderContent extends React.Component {
           </div>
 
           <form onSubmit={this.handleSubmit}>
-            <button type="submit">
+            <button className="get-started" type="submit">
               <p>Get Started</p>
             </button>
           </form>
