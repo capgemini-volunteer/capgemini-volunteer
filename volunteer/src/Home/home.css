@@ -159,13 +159,9 @@
           height: 64px;
           border: none;
           width: 300px;
-          background: #f75a9f;
           padding-top: 17px;
           border-radius: 45px;
-          -webkit-box-shadow: 0 8px 15px #a2549c66;
-          box-shadow: 0 8px 15px #a2549c66;
-          cursor: pointer;
-          color: #fff; }
+          cursor: pointer; }
     @media (max-width: 640px) {
       .home-header {
         height: 708px; }
@@ -278,3 +274,15 @@
   
   .section-title {
     font-family: "Josefin Sans", sans-serif; }
+
+.employee {
+  box-shadow: 0 8px 15px rgba(40, 167, 69, 0.5);
+  color: #000000;
+  background: #28a745;
+}
+
+.case-worker {
+  box-shadow: 0 8px 15px #6c757d;
+  color: #555555;
+  background: #ffffff;
+}
