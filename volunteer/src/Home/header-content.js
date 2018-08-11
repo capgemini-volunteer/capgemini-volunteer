@@ -26,7 +26,7 @@ export class HeaderContent extends React.Component {
             <p>Join the movement</p>
           </div>
           <div className="small">
-            <p>Gotribeo is a kickstarter for businesses, communities and people with shared goals around the world.</p>
+            <p>Charity Park is a kickstarter for businesses, communities and people with shared goals around the world.</p>
           </div>
 
           <form onSubmit={this.handleSubmit}>
