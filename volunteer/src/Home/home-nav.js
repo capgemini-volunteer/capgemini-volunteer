@@ -22,9 +22,6 @@ export class HomeNav extends React.Component {
                     <li onClick={() => this.promptDialog('LoginDialog')}  className="nav-item pointer">
                         <a className="nav-link" > LOG IN</a>                    
                     </li>
-                    <li onClick={() => this.promptDialog('SignUpDialog')}   className="nav-item pointer" type='SignUpDialog'>
-                        <a className=" btn-nav nav-link" >SIGN UP</a>
-                    </li>
                 </ul>
             </div>
         </nav>);

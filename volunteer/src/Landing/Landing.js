@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { HomeHeader } from '../Home/home-header.js'
 import { DialogConductor } from '../Dialog/dialog-conductor.js'
 
-import '../Home/home-header.css';
+import '../Home/home.css';
 import '../Modal/Modal.css';
 
 export class Landing extends React.Component {

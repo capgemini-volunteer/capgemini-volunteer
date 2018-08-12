@@ -21,28 +21,22 @@ export class HeaderContent extends React.Component {
   render() {
     return (
       <Fragment>
-        <div className="img-wrapper">
-          {/* <img className="globe-img" src={globe} alt="globe" />
-          <img className="particle-img" src={particle} alt="logo" />
-          <img className="moon-img" src={moon} alt="moon" /> */}
-        </div>
-        <span className="header-circle">
-        </span>
-        <span className="header-circle">
-        </span>
-        <span className="header-circle">
-        </span>
         <div className="col-xs-9 col-sm-12 col-md-12 col-lg-10  header-container">
           <div className="large">
             <p>Join the movement</p>
           </div>
           <div className="small">
-            <p>Gotribeo is a kickstarter for businesses, communities and people with shared goals around the world.</p>
+            <p>Charity Park is a kickstarter for businesses, communities and people with shared goals around the world.</p>
           </div>
 
           <form onSubmit={this.handleSubmit}>
-            <button type="submit">
-              <p>Get Started</p>
+            <button className="employee" type="submit">
+              <p>Employee Sign Up</p>
+            </button>
+            <br/>
+            <br/>
+            <button className="case-worker" type="submit">
+              <p>Case Worker Sign Up</p>
             </button>
           </form>
         </div>
