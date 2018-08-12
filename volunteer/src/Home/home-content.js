@@ -27,6 +27,12 @@ export class HeaderContent extends React.Component {
           </div>
           <div className="small sigmarone">
             <p>Volunteer and win prizes and glory. It's that simple. </p>
+<<<<<<< 6b9d3d910843b2c20831416534fc5a1d78b0cb97
+=======
+          </div>
+          <div className="small">
+            <p>Charity Park is a kickstarter for businesses, communities and people with shared goals around the world.</p>
+>>>>>>> Merge with master
           </div>
           
           <form onSubmit={this.handleSubmit}>
