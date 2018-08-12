@@ -18,6 +18,7 @@ export class DashboardView extends React.Component {
     this.points1 = Math.ceil(1000 + Math.random() * 200);
     this.points2 = Math.ceil(500 + Math.random() * 500);
     this.points3 = Math.ceil(200 + Math.random() * 100);
+    this.parseName = this.parseName.bind(this);
     this.getRandom = this.getRandom.bind(this);
     this.pointGen = this.pointGen.bind(this);
   }
@@ -29,6 +30,7 @@ export class DashboardView extends React.Component {
       currentComponent.setState( response.data.results[0] );
       console.log(response.data.results[0]);
       currentComponent.setState({
+        nameProfile: currentComponent.parseName(response.data.results[0].email),
         profile: response.data.results[0].picture["large"]
       });
     })
@@ -44,19 +46,18 @@ export class DashboardView extends React.Component {
     .then(function (response) {
       currentComponent.setState( {
         leader1: response.data.results[0],
-        location1: response.data.results[0].location["street"]
+        location1: response.data.results[0].location["street"].toUpperCase()
        });
       console.log(response.data.results[0]);
     })
     .catch(function (error) {
       console.log(error);
     });
-
     axios.get('https://randomuser.me/api/', {})
     .then(function (response) {
       currentComponent.setState( {
         leader2: response.data.results[0],
-        location2: response.data.results[0].location["street"]
+        location2: response.data.results[0].location["street"].toUpperCase()
        });
         console.log(response.data.results[0]);
     })
@@ -68,13 +69,22 @@ export class DashboardView extends React.Component {
     .then(function (response) {
       currentComponent.setState( {
         leader3: response.data.results[0],
-        location3: response.data.results[0].location["street"]
+        location3: response.data.results[0].location["street"].toUpperCase()
        });
       console.log(response.data.results[0]);
     })
     .catch(function (error) {
       console.log(error);
     });
+  }
+
+  parseName(email) {
+    const names = email.split("@")[0].split(".");
+    const first = names[0].charAt(0).toUpperCase() + names[0].slice(1);
+    const last = names[1].charAt(0).toUpperCase() + names[1].slice(1);
+    console.log(first + " " + last);
+    return first + " " + last;
+    //return "";
   }
 
   pointGen(min, max) {
@@ -92,7 +102,7 @@ export class DashboardView extends React.Component {
         {/* <CardImg top width="100%" src="https://ak8.picdn.net/shutterstock/videos/29973988/thumb/8.jpg" alt="Card image cap" /> */}
         <CardImg top width="25%" src={this.state.profile} alt="Card image cap" />
         <CardBody>
-          <CardTitle>{this.state.email}</CardTitle>
+          <CardTitle>{this.state.nameProfile}</CardTitle>
           <CardSubtitle>DevOps Specialist</CardSubtitle>
           <br/>
           <CardText>Enjoys running marathons and yoga</CardText>
@@ -122,13 +132,13 @@ export class DashboardView extends React.Component {
                 <ListGroupItem>
                   <ListGroupItemHeading>Shelter Care Day</ListGroupItemHeading>
                   <ListGroupItemText>
-                    Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                  Location: {this.state.location2}
           </ListGroupItemText>
                 </ListGroupItem>
                 <ListGroupItem>
                   <ListGroupItemHeading>Food Drive</ListGroupItemHeading>
                   <ListGroupItemText>
-                    Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                  Location: {this.state.location3}
           </ListGroupItemText>
                 </ListGroupItem>
               </ListGroup>
