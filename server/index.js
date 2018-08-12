@@ -30,12 +30,14 @@ passport.deserializeUser(async (id, done) => {
 })
 
 const createApp = () => {
+
   app.use(morgan('dev'))
+
   app.use(express.json())
   app.use(express.urlencoded({extended: true}))
 
-  app.use(compression())
 
+  app.use(compression())
   app.use(
     session({
       secret: process.env.SESSION_SECRET || 'my best friend is Cody',
@@ -50,8 +52,8 @@ const createApp = () => {
   app.use('/auth', require('./auth'))
   app.use('/api', require('./api'))
 
-
   app.use(express.static(path.join(__dirname, '..', 'public')))
+
   app.use((req, res, next) => {
     if (path.extname(req.path).length) {
       const err = new Error('Not found')
@@ -62,10 +64,10 @@ const createApp = () => {
     }
   })
 
+
   app.use('*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public/index.html'))
   })
-
 
   app.use((err, req, res, next) => {
     console.error(err)
@@ -79,12 +81,11 @@ const startListening = () => {
     console.log(`Mixing it up on port ${PORT}`)
   )
 
-
   const io = socketio(server)
   require('./socket')(io)
 }
 
-const syncDb = () => db.sync()
+const syncDb = () => db.sync({force: true})
 
 async function bootApp() {
   await sessionStore.sync()

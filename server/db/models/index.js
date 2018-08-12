@@ -1,6 +1,10 @@
 const User = require('./user')
-const Organization = require('./organization')
+const Event = require('./event')
+
+User.belongsToMany(Event, {through: 'userEvents'});
+Event.belongsToMany(User, {through: 'userEvents'});
+
 module.exports = {
   User,
-  Organization
+  Event
 }
