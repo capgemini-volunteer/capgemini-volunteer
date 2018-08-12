@@ -5,7 +5,6 @@ import { Confetti } from '../Confetti/Confetti.js'
 import { HomeHeader } from '../Home/home-header.js'
 import { DialogConductor } from '../Dialog/dialog-conductor.js'
 
-
 import '../Home/home.css';
 import '../Modal/Modal.css';
 import '../Confetti/confetti.css';

@@ -46,6 +46,7 @@ export class DashboardView extends React.Component {
     .then(function (response) {
       currentComponent.setState( {
         leader1: response.data.results[0],
+        leader1name: currentComponent.parseName(response.data.results[0].email),
         location1: response.data.results[0].location["street"].toUpperCase()
        });
       console.log(response.data.results[0]);
@@ -57,6 +58,7 @@ export class DashboardView extends React.Component {
     .then(function (response) {
       currentComponent.setState( {
         leader2: response.data.results[0],
+        leader2name: currentComponent.parseName(response.data.results[0].email),
         location2: response.data.results[0].location["street"].toUpperCase()
        });
         console.log(response.data.results[0]);
@@ -69,6 +71,7 @@ export class DashboardView extends React.Component {
     .then(function (response) {
       currentComponent.setState( {
         leader3: response.data.results[0],
+        leader3name: currentComponent.parseName(response.data.results[0].email),
         location3: response.data.results[0].location["street"].toUpperCase()
        });
       console.log(response.data.results[0]);
@@ -148,19 +151,19 @@ export class DashboardView extends React.Component {
             <div className="col-6">
               <ListGroup>
                 <ListGroupItem>
-                  <ListGroupItemHeading>{this.state.leader1.email}</ListGroupItemHeading>
+                  <ListGroupItemHeading>{this.state.leader1name}</ListGroupItemHeading>
                   <ListGroupItemText>
                   Total Points: {this.points1}
           </ListGroupItemText>
                 </ListGroupItem>
                 <ListGroupItem>
-                  <ListGroupItemHeading>{this.state.leader2.email}</ListGroupItemHeading>
+                  <ListGroupItemHeading>{this.state.leader2name}</ListGroupItemHeading>
                   <ListGroupItemText>
                   Total Points: {this.points2}
           </ListGroupItemText>
                 </ListGroupItem>
                 <ListGroupItem>
-                  <ListGroupItemHeading>{this.state.leader3.email}</ListGroupItemHeading>
+                  <ListGroupItemHeading>{this.state.leader3name}</ListGroupItemHeading>
                   <ListGroupItemText>
                   Total Points: {this.points3}
           </ListGroupItemText>
