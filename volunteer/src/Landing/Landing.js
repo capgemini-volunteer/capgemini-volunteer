@@ -32,6 +32,7 @@ export class Landing extends React.Component {
     this.setState({
       value: inputValue
     });
+    console.log(inputValue);
   }
   render() {
     return (
