@@ -102,8 +102,13 @@ export class CaseWorkerSignupType extends React.Component {
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem  onClick={() => this.onCategorySel("Animals")}>Animals</DropdownItem>
-                  <DropdownItem  onClick={() => this.onCategorySel("Children & Youth")}>Children Youth</DropdownItem>
+                  <DropdownItem  onClick={() => this.onCategorySel("Children & Youth")}>Children & Youth</DropdownItem>
                   <DropdownItem  onClick={() => this.onCategorySel("Disaster Relief")}>Disaster Relief</DropdownItem>
+                  <DropdownItem  onClick={() => this.onCategorySel("Advocacy & Human Rights")}>Human Rights</DropdownItem>
+                  <DropdownItem  onClick={() => this.onCategorySel("Arts & Culture")}>Arts & Culture</DropdownItem>
+                  <DropdownItem  onClick={() => this.onCategorySel("Computers & Technology")}>Computers & Tech</DropdownItem>
+                  <DropdownItem  onClick={() => this.onCategorySel("Justice & Legal")}>Justice & Legal</DropdownItem>
+                  <DropdownItem  onClick={() => this.onCategorySel("Sports & Recreation")}>Sports & Recreation</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
             </div>
