@@ -33,11 +33,11 @@ export class HeaderContent extends React.Component {
             <p>Welcome to Charity Games</p>
           </div>
           <div className="small sigmarone">
-            <p>Volunteer and win prizes and glory. It's that simple. </p>
+            <p>Volunteer to win prizes and glory. It's that simple. </p>
           </div>
-          <div className="small">
+          {/* <div className="small">
             <p>Charity Park is a kickstarter for businesses, communities and people with shared goals around the world.</p>
-          </div>
+          </div> */}
           
           <form >
             <button onClick={(e) => this.handleSubmitEmployee(e)} className="employee" type="submit" value="EmployeeSignUpDialog">
