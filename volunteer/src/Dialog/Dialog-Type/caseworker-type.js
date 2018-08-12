@@ -7,6 +7,7 @@ export class CaseWorkerSignupType extends React.Component {
     super(props);
     this.promptDialog = this.promptDialog.bind(this);
     this.toggle = this.toggle.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.state = {
       dropdownOpen: false,
       cat1: "Animals"
@@ -32,6 +33,16 @@ export class CaseWorkerSignupType extends React.Component {
     });
   }
 
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
   render() {
     const externalCloseBtn =
       <button className="close external"
@@ -46,37 +57,37 @@ export class CaseWorkerSignupType extends React.Component {
             {/* Street */}
             <div className="form-group">
               <label htmlFor="recipient-name" className="col-form-label">Street:</label>
-              <input type="text" name="street" id="street" className="form-control input" required="" />
+              <input type="text" name="street" id="street" className="form-control input" required="" onChange={this.handleInputChange} />
               <span className=" hidden help-block">Street is required</span>
             </div>
             {/* City */}
             <div className="form-group">
               <label htmlFor="recipient-name" className="col-form-label">City:</label>
-              <input type="text" name="city" id="city" className="form-control input" required="" />
+              <input type="text" name="city" id="city" className="form-control input" required="" onChange={this.handleInputChange} />
               <span className="hidden help-block">City is required</span>
             </div>
             {/* State */}
             <div className="form-group">
               <label htmlFor="recipient-name" className="col-form-label">State:</label>
-              <input type="text" name="state" id="state" className="form-control input" required="" />
+              <input type="text" name="state" id="state" className="form-control input" required="" onChange={this.handleInputChange} />
               <span className="hidden help-block">State is required</span>
             </div>
             {/* Zipcode */}
             <div className="form-group">
               <label htmlFor="recipient-name" className="col-form-label">Zipcode:</label>
-              <input type="number" name="zipcode" id="zipcode" className="form-control input" required="" />
+              <input type="number" name="zipcode" id="zipcode" className="form-control input" required="" onChange={this.handleInputChange} />
               <span className="hidden help-block">Zipcode is required</span>
             </div>
             {/* Country */}
             <div className="form-group">
               <label htmlFor="recipient-name" className="col-form-label">Country:</label>
-              <input type="text" name="country" id="country" className="form-control input" required="" />
+              <input type="text" name="country" id="country" className="form-control input" required="" onChange={this.handleInputChange} />
               <span className="hidden help-block">Country is required</span>
             </div>
             {/* Phone */}
             <div className="form-group">
               <label htmlFor="recipient-name" className="col-form-label">Phone</label>
-              <input type="text" name="phone" id="phone" className="form-control input" required="" />
+              <input type="text" name="phone" id="phone" className="form-control input" required="" onChange={this.handleInputChange} />
               <span className="hidden help-block">Phone number is required</span>
             </div>
 
