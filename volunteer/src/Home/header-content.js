@@ -23,20 +23,20 @@ export class HeaderContent extends React.Component {
       <Fragment>
         <div className="col-xs-9 col-sm-12 col-md-12 col-lg-10  header-container">
           <div className="large">
-            <p>Join the movement</p>
+            <p>Welcome to Charity Games</p>
           </div>
-          <div className="small">
-            <p>Gotribeo is a kickstarter for businesses, communities and people with shared goals around the world.</p>
+          <div className="small sigmarone">
+            <p>Volunteer and win prizes and glory. It's that simple. </p>
           </div>
 
           <form onSubmit={this.handleSubmit}>
             <button className="employee" type="submit">
-              <p>Employee Sign Up</p>
+              <p>Volunteer Sign Up</p>
             </button>
             <br/>
             <br/>
             <button className="case-worker" type="submit">
-              <p>Case Worker Sign Up</p>
+              <p>Organization Sign Up</p>
             </button>
           </form>
         </div>
