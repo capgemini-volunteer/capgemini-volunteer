@@ -6,16 +6,23 @@ export class HeaderContent extends React.Component {
     this.state = { value: '' };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmitEmployee = this.handleSubmitEmployee.bind(this);
+    this.handleSubmitCaseworker = this.handleSubmitCaseworker.bind(this);
   }
 
   handleChange = (e) => {
     this.setState({ value: e.target.value });
   }
 
-  handleSubmit = (e)  => {
-   this.props.toggle('SignUpDialog');
+  handleSubmitEmployee = (e)  => {
+   this.props.toggle('EmployeeSignUpDialog');
    this.props.trigger(this.state.value);
+  e.preventDefault();
+  }
+
+  handleSubmitCaseworker = (e) => {
+    this.props.toggle('CaseWorkerSignUpDialog');
+    this.props.trigger(this.state.value);
     e.preventDefault();
   }
   render() {
@@ -30,14 +37,14 @@ export class HeaderContent extends React.Component {
 
             <p hidden>Charity Park is a kickstarter for businesses, communities and people with shared goals around the world.</p>
           </div>
-
-          <form onSubmit={this.handleSubmit}>
-            <button className="employee" type="submit">
+          
+          <form >
+            <button onClick={(e) => this.handleSubmitEmployee(e)} className="employee" type="submit" value="EmployeeSignUpDialog">
               <p>Volunteer Sign Up</p>
             </button>
             <br/>
             <br/>
-            <button className="case-worker" type="submit">
+            <button onClick={(e) => this.handleSubmitCaseworker(e)} className="case-worker" type="submit" value="CaseWorkerSignUpDialog">
               <p>Organization Sign Up</p>
             </button>
           </form>
