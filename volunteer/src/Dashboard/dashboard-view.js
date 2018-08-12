@@ -2,9 +2,85 @@
 import React, { Fragment } from 'react';
 import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Button,Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle } from 'reactstrap';
+import axios from 'axios';
+
+
 
 export class DashboardView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      results: [],
+      leader1: {},
+      leader2: {},
+      leader3: {},
+    };    
+    this.points1 = Math.ceil(1000 + Math.random() * 200);
+    this.points2 = Math.ceil(500 + Math.random() * 500);
+    this.points3 = Math.ceil(200 + Math.random() * 100);
+    this.getRandom = this.getRandom.bind(this);
+    this.pointGen = this.pointGen.bind(this);
+  }
 
+  componentDidMount() {
+    let currentComponent = this;
+    axios.get('https://randomuser.me/api/', {})
+    .then(function (response) {
+      currentComponent.setState( response.data.results[0] );
+      console.log(response.data.results[0]);
+      currentComponent.setState({
+        profile: response.data.results[0].picture["large"]
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    currentComponent.getRandom();
+  }
+
+  getRandom() {
+    let currentComponent = this;
+    axios.get('https://randomuser.me/api/', {})
+    .then(function (response) {
+      currentComponent.setState( {
+        leader1: response.data.results[0],
+        location1: response.data.results[0].location["street"]
+       });
+      console.log(response.data.results[0]);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    axios.get('https://randomuser.me/api/', {})
+    .then(function (response) {
+      currentComponent.setState( {
+        leader2: response.data.results[0],
+        location2: response.data.results[0].location["street"]
+       });
+        console.log(response.data.results[0]);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });    
+    
+    axios.get('https://randomuser.me/api/', {})
+    .then(function (response) {
+      currentComponent.setState( {
+        leader3: response.data.results[0],
+        location3: response.data.results[0].location["street"]
+       });
+      console.log(response.data.results[0]);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  pointGen(min, max) {
+    const rand = min + Math.random() * (max - min);
+    return rand;
+  }
 
   render() {
     return (
@@ -13,12 +89,14 @@ export class DashboardView extends React.Component {
           <div className="row">
             <div className="col-6">
             <Card>
-        <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+        {/* <CardImg top width="100%" src="https://ak8.picdn.net/shutterstock/videos/29973988/thumb/8.jpg" alt="Card image cap" /> */}
+        <CardImg top width="25%" src={this.state.profile} alt="Card image cap" />
         <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
+          <CardTitle>{this.state.email}</CardTitle>
+          <CardSubtitle>DevOps Specialist</CardSubtitle>
+          <br/>
+          <CardText>Enjoys running marathons and yoga</CardText>
+          <Button></Button>
         </CardBody>
       </Card>
             </div>
@@ -36,19 +114,19 @@ export class DashboardView extends React.Component {
                 </ListGroupItem>
 
                 <ListGroupItem>
-                  <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
+                  <ListGroupItemHeading>Walk for Breast Cancer</ListGroupItemHeading>
+                  <ListGroupItemText>
+                    Location: {this.state.location1}
+          </ListGroupItemText>
+                </ListGroupItem>
+                <ListGroupItem>
+                  <ListGroupItemHeading>Shelter Care Day</ListGroupItemHeading>
                   <ListGroupItemText>
                     Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
           </ListGroupItemText>
                 </ListGroupItem>
                 <ListGroupItem>
-                  <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
-                  <ListGroupItemText>
-                    Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-          </ListGroupItemText>
-                </ListGroupItem>
-                <ListGroupItem>
-                  <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
+                  <ListGroupItemHeading>Food Drive</ListGroupItemHeading>
                   <ListGroupItemText>
                     Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
           </ListGroupItemText>
@@ -60,21 +138,21 @@ export class DashboardView extends React.Component {
             <div className="col-6">
               <ListGroup>
                 <ListGroupItem>
-                  <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
+                  <ListGroupItemHeading>{this.state.leader1.email}</ListGroupItemHeading>
                   <ListGroupItemText>
-                    Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                  Total Points: {this.points1}
           </ListGroupItemText>
                 </ListGroupItem>
                 <ListGroupItem>
-                  <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
+                  <ListGroupItemHeading>{this.state.leader2.email}</ListGroupItemHeading>
                   <ListGroupItemText>
-                    Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                  Total Points: {this.points2}
           </ListGroupItemText>
                 </ListGroupItem>
                 <ListGroupItem>
-                  <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
+                  <ListGroupItemHeading>{this.state.leader3.email}</ListGroupItemHeading>
                   <ListGroupItemText>
-                    Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                  Total Points: {this.points3}
           </ListGroupItemText>
                 </ListGroupItem>
               </ListGroup>
