@@ -28,7 +28,7 @@ export class HeaderContent extends React.Component {
           <div className="small">
             <p>Charity Park is a kickstarter for businesses, communities and people with shared goals around the world.</p>
           </div>
-
+          
           <form onSubmit={this.handleSubmit}>
             <button className="employee" type="submit">
               <p>Employee Sign Up</p>

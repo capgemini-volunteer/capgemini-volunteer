@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from '../logo.svg';
 
-
 export class HomeNav extends React.Component {
 
   constructor(props) {
@@ -12,6 +11,7 @@ export class HomeNav extends React.Component {
   promptDialog = (type) => { 
      this.props.handleOnClick(type);
   }
+
     render() {
         return (<nav  style={{background: this.props.hasScrolled ? '#252857' : ''}}  className=" landing navbar-inverse navbar navbar-expand-md navbar-dark fixed-top bg-bootstrap">
             <a className="logo navbar-brand mr-0 mr-md-2">
