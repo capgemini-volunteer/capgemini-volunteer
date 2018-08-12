@@ -9,7 +9,7 @@ export class DashboardView extends React.Component {
   render() {
     return (
       <Fragment>
-        <div className="dashboard-container">
+        <div className="dashboard-container page-wrapper">
           <div className="row">
             <div className="col-6">
             <Card>
