@@ -1,6 +1,6 @@
 import React from 'react';
 import { HomeNav } from '../Home/home-nav.js';
-import { HeaderContent } from '../Home/header-content.js';
+import { HeaderContent } from '../Home/home-content.js';
 
 
 
