@@ -1,13 +1,9 @@
 
   .dashboard-bg  {
-    background-color: #DBD9DB;
+    background-color: #dee2e6;
     margin-top: 50px;
   }
-  @media screen and (min-width: 768px) {
-    .dashboard-bg {
-      margin-left: 240px;
-    }
-  }
+
   
   .dashboard-header {
     box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
@@ -65,5 +61,22 @@
   }
   
 
+  .dashboard-container{
+    display: block;
+    position:relative;
+    left: auto;
+    padding-left: 133px;
+    padding-top:20px;
+    text-align: center;
+   
+  }
 
-  
+  .flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .min-pad{
+    padding: 5px
+  }
