@@ -30,13 +30,10 @@
     overflow: hidden; }
     .home-header::after {
       background: #100c57;
-      /* Old browsers */
-      background: -moz-linear-gradient(left, #100c57 0%, #1c2572 20%, #6935b3 100%);
-      /* FF3.6-15 */
       background: -webkit-linear-gradient(left, #100c57 0%, #1c2572 20%, #6935b3 100%);
-      /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to right, #100c57 0%, #1c2572 20%, #6935b3 100%);
-      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      background: -webkit-gradient(linear, left top, right top, from(#100c57), color-stop(20%, #1c2572), to(#6935b3));
+      background: -o-linear-gradient(left, #100c57 0%, #1c2572 20%, #6935b3 100%);
+      background: linear-gradient(to right, #007bff 0%, #007bff 20%, rgba(42, 19, 239, 0.5) 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c2572', endColorstr='#6935b3',GradientType=1 );
       z-index: -10;
       content: "";
@@ -128,10 +125,15 @@
         font-size: 1.5em;
         padding-bottom: 10px;
         width: 502px; }
+      .home-header .header-container .small.sigmarone  {
+        font-family: "Sigmar One", cursive;  
+      }
       .home-header .header-container .large {
         font-size: 347%;
         font-weight: bold;
         color: #fff;
+        font-family: 'Sigmar One', cursive;
+        text-shadow: -1px 5px #ad9db5;
         text-transform: capitalize; }
         .home-header .header-container .large span {
           color: #ff8e59;
@@ -277,12 +279,12 @@
 
 .employee {
   box-shadow: 0 8px 15px rgba(40, 167, 69, 0.5);
-  color: #000000;
+  color: #ffff;
   background: #28a745;
 }
 
 .case-worker {
   box-shadow: 0 8px 15px #6c757d;
-  color: #555555;
+  color: #801dc5;
   background: #ffffff;
 }
